@@ -14,3 +14,5 @@ loguru>=0.7.0
 # Testing dependencies
 httpx>=0.24.0
 sseclient-py>=1.7.0
+
+langchain-google-genai>=2.1.10
