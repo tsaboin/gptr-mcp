@@ -296,9 +296,9 @@ def run_server():
             logger.info("Using STDIO transport (Claude Desktop compatible)")
             mcp.run(transport="stdio")
         elif transport == "sse":
-            mcp.run(transport="sse", host="0.0.0.0", port=8000)
+            mcp.run(transport="sse", host="0.0.0.0", port=8111)
         elif transport == "streamable-http":
-            mcp.run(transport="streamable-http", host="0.0.0.0", port=8000)
+            mcp.run(transport="streamable-http", host="0.0.0.0", port=8111)
         else:
             raise ValueError(f"Unsupported transport: {transport}")
             
