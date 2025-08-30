@@ -17,7 +17,7 @@ import sseclient
 from typing import Dict, Any, Optional
 
 class MCPServerTester:
-    def __init__(self, base_url: str = "http://localhost:8000"):
+    def __init__(self, base_url: str = "http://localhost:8111"):
         self.base_url = base_url
         self.session_id: Optional[str] = None
         self.client = httpx.AsyncClient(timeout=30.0)
@@ -177,12 +177,12 @@ async def main():
     # Check if server is running
     try:
         async with httpx.AsyncClient() as client:
-            response = await client.get("http://localhost:8000/")
+            response = await client.get("http://localhost:8111/")
             if response.status_code != 404:  # 404 is expected for root
-                print("❌ Server doesn't seem to be running on port 8000")
+                print("❌ Server doesn't seem to be running on port 8111")
                 return
     except:
-        print("❌ Cannot connect to server on port 8000")
+        print("❌ Cannot connect to server on port 8111")
         print("💡 Make sure to start the server with: python server.py")
         return
     
